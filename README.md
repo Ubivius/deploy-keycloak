@@ -1,4 +1,7 @@
-# keycloak Helm Charts
+# Deploy-Keycloak
+A component managing user logins, token generation and user groups for access levels in authentication. 
+
+Work with microservice-authentication as access API.
 
 ## Usage
 
@@ -37,3 +40,4 @@ To uninstall/delete the keycloak deployment:
 ```console
 helm delete keycloak
 ```
+For more information visit https://www.keycloak.org.
