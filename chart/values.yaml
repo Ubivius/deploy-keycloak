@@ -13,7 +13,7 @@ resources:
     memory: 1000Mi
 
 ingress:
-  enabled: true
+  enabled: false
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
@@ -24,3 +24,9 @@ ingress:
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
+
+ingressRoute:
+  enabled: true
+  match: Host(`keycloak.admin.dev.ubivius.tk`) && PathPrefix(`/`)
+  tls:
+    secretName: keycloak.admin.dev.ubivius.tk
