@@ -24,9 +24,3 @@ ingress:
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
-
-ingressRoute:
-  enabled: true
-  match: Host(`keycloak.admin.dev.ubivius.tk`) && PathPrefix(`/`)
-  tls:
-    secretName: keycloak.admin.dev.ubivius.tk
