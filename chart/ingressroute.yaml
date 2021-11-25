@@ -1,0 +1,18 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: keycloak-ingressroute
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: Host(`keycloak.admin.dev.ubivius.tk`) && PathPrefix(`/`)
+      kind: Rule
+      services:
+        - name: keycloak
+          kind: Service
+          port: 443
+          namespace: default
+  tls:
+    secretName: keycloak.admin.dev.ubivius.tk
